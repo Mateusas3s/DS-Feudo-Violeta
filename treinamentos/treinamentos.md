@@ -1,3 +1,3 @@
 # Treinamentos para o Projeto
 
-#### [Treinamento de eXtreme Programming](treinemnto-xp)
+#### [Treinamento de eXtreme Programming](treinemnto-xp.md)
