@@ -14,18 +14,18 @@
 
 <b>Refatoração</b>: É um processo que permite a melhoria contínua da programação, o mínimo de introdução de erros e mantendo compatibilidade com o código já existente. Refatorar melhora a clareza, leitura do código e facilita a manutenção. Além disso, o código fica mais coeso e você tem um melhor aproveitamento, evitando duplicação no código fonte.
 
-</b>Código coletivo</b>: Diz que o código fonte não tem dono e ninguém precisa solicitar permissão para poder modificar o mesmo. O objetivo é fazer a equipe conhecer todas as partes do sistema.
+<b>Código coletivo</b>: Diz que o código fonte não tem dono e ninguém precisa solicitar permissão para poder modificar o mesmo. O objetivo é fazer a equipe conhecer todas as partes do sistema.
 
-</b>Padronização do código</b>: Como todo mundo trabalha no desenvolvimento do mesmo software, a equipe de desenvolvimento precisa estabelecer regras para programar e todos devem seguir essas regras, assim parecerá que todo código fonte foi digitado pela mesma pessoa. A padronização de código também é muito importante, porque o XP preza isso, o trabalho em equipe, se uma pessoa faz de um jeito e a outra faz de outro, isso fica muito confuso e futuramente pode ter problemas na revisão deste código.
+<b>Padronização do código</b>: Como todo mundo trabalha no desenvolvimento do mesmo software, a equipe de desenvolvimento precisa estabelecer regras para programar e todos devem seguir essas regras, assim parecerá que todo código fonte foi digitado pela mesma pessoa. A padronização de código também é muito importante, porque o XP preza isso, o trabalho em equipe, se uma pessoa faz de um jeito e a outra faz de outro, isso fica muito confuso e futuramente pode ter problemas na revisão deste código.
 
-</b>Design simples</b>: Essa prática se encaixa no princípio da simplicidade e é basicamente seguir o que o usuário está pedindo, por conta disso o design do software acaba sendo mais simplista. Além disso, o software acaba ficando mais fácil de ser alterado. Com essa metodologia você consegue alterar o código quando precisar, sem comprometer a qualidade.
+<b>Design simples</b>: Essa prática se encaixa no princípio da simplicidade e é basicamente seguir o que o usuário está pedindo, por conta disso o design do software acaba sendo mais simplista. Além disso, o software acaba ficando mais fácil de ser alterado. Com essa metodologia você consegue alterar o código quando precisar, sem comprometer a qualidade.
 
-</b>Metáfora</b>: Procura facilitar a comunicação com o cliente, entendendo qual a realidade dele. É preciso traduzir as palavras do cliente para o significado que ele espera dentro do projeto.
+<b>Metáfora</b>: Procura facilitar a comunicação com o cliente, entendendo qual a realidade dele. É preciso traduzir as palavras do cliente para o significado que ele espera dentro do projeto.
 
-</b>Ritmo sustentável</b>: Manter um ritmo de trabalho com qualidade, onde eles estejam atentos e dispostos
+<b>Ritmo sustentável</b>: Manter um ritmo de trabalho com qualidade, onde eles estejam atentos e dispostos
 
-</b>Semana de 40 horas</b>: É trabalhar com qualidade buscando ter um ritmo de trabalho saudável, 40h por semana, 8h por dia, sem horas extras.
+<b>Semana de 40 horas</b>: É trabalhar com qualidade buscando ter um ritmo de trabalho saudável, 40h por semana, 8h por dia, sem horas extras.
 
-</b>Integração contínua</b>: Sempre que for produzido uma nova funcionalidade você nunca deve esperar uma semana para integrar com a versão atual do sistema. Isso só aumenta a possibilidade de conflitos e possibilidade de erros no código fonte. Integrar de forma contínua permite saber o status real da programação.
+<b>Integração contínua</b>: Sempre que for produzido uma nova funcionalidade você nunca deve esperar uma semana para integrar com a versão atual do sistema. Isso só aumenta a possibilidade de conflitos e possibilidade de erros no código fonte. Integrar de forma contínua permite saber o status real da programação.
 
-</b>Releases curtos</b>: As liberações de pequenas versões funcionais do projeto auxiliam muito no processo de aceitação por parte do cliente que já pode testar uma parte do sistema. As versões chegam ainda ser menores que as produzidas em outras metodologias incrementais, como o RUP. Os releases são pequenos pedaços do produto que são entregues ao cliente antes do tempo, assim o cliente não precisa esperar o produto todo ficar pronto para ver.
+<b>Releases curtos</b>: As liberações de pequenas versões funcionais do projeto auxiliam muito no processo de aceitação por parte do cliente que já pode testar uma parte do sistema. As versões chegam ainda ser menores que as produzidas em outras metodologias incrementais, como o RUP. Os releases são pequenos pedaços do produto que são entregues ao cliente antes do tempo, assim o cliente não precisa esperar o produto todo ficar pronto para ver.
