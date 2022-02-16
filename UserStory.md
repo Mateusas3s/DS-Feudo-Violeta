@@ -15,9 +15,9 @@ Melhor comunicação entre todas as partes da criação do produto
 
 <b>Modelo</b>
 
-Como <b>[Persona]</b>, eu <b>[quero]</b>, <b>[para que]</b>.
-	-Critério de aceitação 1
-	-Critério de aceitação 2
-	-Critério de aceitação n…
+Como <b>[Persona]</b>, eu <b>[quero]</b>, <b>[para que]</b>.</br>
+	-Critério de aceitação 1</br>
+	-Critério de aceitação 2</br>
+	-Critério de aceitação n…</br>
 
 Deve indicar quem <b>[Persona]</b> irá usufruir de tal recurso, indicar sua intenção <b>[quero]</b> com aquele recurso e qual o seu objetivo <b>[para que]</b> de se fazer com tal recurso, além de indicar quais são os requisitos para indicar que tal recurso esteja funcionando e pronto para o uso.
