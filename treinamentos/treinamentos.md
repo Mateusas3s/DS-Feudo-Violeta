@@ -1,3 +1,5 @@
 # Treinamentos para o Projeto
 
-#### [Treinamento de eXtreme Programming](treinamento-xp.md)
+#### [EXtreme Programming](treinamento-xp.md)
+#### [Brainstorming](brainstorming.md)
+#### [Introspecção](introspeccao.md)
