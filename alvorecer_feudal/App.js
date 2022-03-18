@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/Screen/Login';
 import Menu from './src/Screen/Menu';
 
-const Stack = createNativeStackNavigator()
+const Stack = createStackNavigator()
 
 export default function App(){
   return (

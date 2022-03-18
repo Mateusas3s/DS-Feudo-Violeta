@@ -14,7 +14,6 @@ export default function Login({navigation}){
         <Text>Menu Principal</Text> 
         </TouchableOpacity>
 
-      <StatusBar style="auto" />
     </View>
     )
 }
