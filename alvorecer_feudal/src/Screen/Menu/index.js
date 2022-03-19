@@ -1,10 +1,11 @@
-import react from "react";
+import React from "react";
 import {View, Image, Text} from 'react-native';
 
-export default function Menu(){
+export default function Menu( {route} ){
     return(
     <View>
-        <Text>Menu Principal</Text>
+        <Text>Login: {route.params?.username}</Text>
+        <Text>Senha: {route.params?.senha}</Text>
     </View>
     )
 }
