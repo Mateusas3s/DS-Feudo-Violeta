@@ -22,7 +22,15 @@ export default function Login({navigation}){
       .then((userCredential) => {
         // Signed in
         let user = userCredential.user;
-        navigation.navigate('Menu');
+
+        //Condição para direcionar à pagina do admin ou do usuario comum
+        if(username == 'admin@admin.com'){
+          navigation.navigate('MenuAdmin');
+        }else{
+          navigation.navigate('Menu');
+        }
+
+        setErrorLogin(false);
         // ...
       })
       .catch((error) => {

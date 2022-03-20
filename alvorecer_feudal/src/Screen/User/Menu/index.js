@@ -4,8 +4,8 @@ import {View, Image, Text} from 'react-native';
 export default function Menu( {route} ){
     return(
     <View>
-        <Text>Login: {route.params?.username}</Text>
-        <Text>Senha: {route.params?.senha}</Text>
+        <Text>Menu comum</Text>
+        
     </View>
     )
 }
