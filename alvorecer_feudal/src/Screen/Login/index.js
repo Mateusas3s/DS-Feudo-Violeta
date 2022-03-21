@@ -47,7 +47,7 @@ export default function Login({navigation}){
       style={styles.container}
       
       >
-      <Image source = {require('../../../assets/kanna.jpg')} //Logo da tela de login
+      <Image source = {require('../../../assets/logo.png')} //Logo da tela de login
              style = {styles.image}
       />
       
@@ -62,6 +62,7 @@ export default function Login({navigation}){
           placeholder = "Email"
           style = {styles.textContainer}
           textAlign = 'center'
+          alignItems = 'center'
         /> 
 
         <TextInput //Input para a Senha
@@ -70,6 +71,7 @@ export default function Login({navigation}){
           placeholder = "senha"
           style = {styles.textContainer}
           textAlign = 'center'
+          alignItems = 'center'
           secureTextEntry = {true}
         />
 
@@ -109,41 +111,42 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#8425E3',
       alignItems: 'center',
+      justifyContent: 'space-evenly',
     },
 
     loginContainer: {
-      height: 443,
-      width: 302,
+      height: 342,
+      width: 322,
       backgroundColor: '#484848',
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
       alignItems: 'center',
       borderRadius: 20,
     },
 
     textContainer: {
       height: 54,
-      width: 221,
+      width: 281,
       fontSize: 25,
       backgroundColor: '#fff',
-      marginTop: 25,
+      marginTop: 0,
       borderRadius: 20,
       
     },
 
     button: {
       height: 54,
-      width: 221,
+      width: 201,
       backgroundColor: '#6EF46B',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 60,
+      marginTop: 0,
       borderRadius: 20,
     },
 
     tittle: {
       fontSize: 40,
       color: '#fff',
-      marginBottom: 30,
+      marginBottom: 0,
     },
 
     text: {
@@ -151,10 +154,10 @@ const styles = StyleSheet.create({
     },
 
     image: {
-      width: 100,
-      height: 100,
+      width: 300,
+      height: 120,
       marginTop: 50,
-      marginBottom: 50,
+      marginBottom: 40,
     },
 
     messageError: {
