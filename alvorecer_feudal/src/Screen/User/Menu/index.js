@@ -1,7 +1,10 @@
 import React from "react";
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
 
-export default function Menu( {route} ){
+export default function Menu( {navigiation} ){
+
+
+
     return(
     <View>
         <Text>Menu comum</Text>
@@ -9,3 +12,10 @@ export default function Menu( {route} ){
     </View>
     )
 }
+
+const styles = StyleSheet.create({
+
+
+
+
+})
