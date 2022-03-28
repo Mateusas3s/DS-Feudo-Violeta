@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function Interface(){
 
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         
       },
-
+      
       button1: {
         height: 80,
         width: 201,

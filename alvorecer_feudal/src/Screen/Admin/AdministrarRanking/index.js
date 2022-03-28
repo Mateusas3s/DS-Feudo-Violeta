@@ -1,11 +1,11 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function Feudo(){
+export default function AdministrarRanking(){
     return(
-    <View style = {styles.container}>
-        <Text style = {styles.tittle}>User Feudo</Text>
-    </View>
+        <View style = {styles.container}>
+            <Text style = {styles.tittle}>Administrar o Ranking</Text>
+        </View>
     );
 }
 
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         
     },
-    
+
     tittle: {
         fontSize: 40,
         color: '#fff',
