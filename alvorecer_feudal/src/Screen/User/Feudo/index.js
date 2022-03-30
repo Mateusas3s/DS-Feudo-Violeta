@@ -1,7 +1,12 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import app from "../../../config/firebase";
+import {getDoc, where, getFirestore} from 'firebase/firestore';
 
 export default function Feudo(){
+
+    const bd = getFirestore();
+    
     return(
     <View style = {styles.container}>
         <Text style = {styles.tittle}>User Feudo</Text>
