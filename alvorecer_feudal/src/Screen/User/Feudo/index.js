@@ -1,6 +1,5 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import app from "../../../config/firebase";
 import {getDoc, where, getFirestore} from 'firebase/firestore';
 
 export default function Feudo(){
