@@ -1,8 +1,14 @@
 import React, {useState} from "react";
-import {View, Image, Text, StyleSheet, TouchableOpacity, TextInput,
-KeyboardAvoidingView, Platform} from 'react-native';
+import {View,
+        Image,
+        Text,
+        StyleSheet,
+        TouchableOpacity,
+        TextInput,
+        KeyboardAvoidingView,
+        Platform} from 'react-native';
+
 import {MaterialCommunityIcons} from '@expo/vector-icons';
-import app from "../../../config/firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login({navigation}){
@@ -121,6 +127,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-evenly',
       alignItems: 'center',
       borderRadius: 20,
+      elevation: 15,
     },
 
     textContainer: {
@@ -130,6 +137,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       marginTop: 0,
       borderRadius: 20,
+      elevation: 30,
+      color: '#484848'
       
     },
 
@@ -141,6 +150,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginTop: 0,
       borderRadius: 20,
+      elevation: 30,
     },
 
     tittle: {
@@ -151,6 +161,7 @@ const styles = StyleSheet.create({
 
     text: {
       fontSize: 30,
+      color: '#484848',
     },
 
     image: {

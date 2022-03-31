@@ -4,7 +4,6 @@ import Interface from '../../User/Interface/index'
 import userFeudo from '../../User/Feudo/index';
 import userTarefas from '../../User/Tarefas/index';
 import userPerfil from '../../User/Perfil/index';
-import userRanking from '../../User/Ranking/index';
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -18,7 +17,6 @@ export default function UserMenu(){
             <Tab.Screen name = "Feudo" component={userFeudo} options={{headerShown: false}}/>
             <Tab.Screen name = "Tarefas" component={userTarefas} options={{headerShown: false}}/>
             <Tab.Screen name = "Perfil" component={userPerfil} options={{headerShown: false}}/>
-            <Tab.Screen name = "Ranking" component={userRanking} options={{headerShown: false}}/>
         </Tab.Navigator>
     );
 }
