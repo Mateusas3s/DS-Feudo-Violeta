@@ -10,6 +10,7 @@ import {View,
 
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from '../../../config/firebase'
 
 export default function Login({navigation}){
 
