@@ -11,7 +11,7 @@ import {View,
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../../../config/firebase'
-//a
+
 export default function Login({navigation}){
 
   //Métodos getter e setter das variáveis
