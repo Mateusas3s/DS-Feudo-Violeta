@@ -10,6 +10,11 @@ export default function Perfil(){
     const [senha, setSenha] = useState('102030')
     const [about, setAbout] = useState('Eu sei usar React Native e estou aprendendo Firebase :D')
 
+    const setAtributos = () => {
+
+
+    }
+
     return(
     <SafeAreaView style = {styles.container}>
         <ScrollView contentContainerStyle = {styles.scrollContainer}>
@@ -46,6 +51,7 @@ export default function Perfil(){
 
             <TouchableOpacity
                 style = {styles.button}
+                
             >
                 <Text style = {styles.text}>Confirmar</Text>
             </TouchableOpacity>
