@@ -1,6 +1,6 @@
 import React from "react";
-import  { Navigation }  from  'react-minimal-side-navigation' ; 
-import  'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css' ;
+//import  { Navigation }  from  'react-minimal-side-navigation' ; 
+//import  'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css' ;
 import {View, Image, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 export default function Tarefas(){
