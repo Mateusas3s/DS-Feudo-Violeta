@@ -27,7 +27,15 @@ export default function Tarefas(){
                     <Text style={styles.tarefas}>Tarefa 14</Text>
                     
                 </ScrollView> 
+
+                
+
             </View>
+            
+            <TouchableOpacity style={styles.button}>
+                <Text>Adicionar tarefa  +</Text>
+            </TouchableOpacity>
+
         </View>
         
 
@@ -55,8 +63,8 @@ const styles = StyleSheet.create({
     },
 
     scrollview: {
-        height: 440,
-        width: 410,
+        height: 350,
+        width: 370,
         borderRadius: 10,
         marginTop: 20,
         backgroundColor: '#fff',
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
     tarefas: {
         backgroundColor: '#6EF46B',
         borderRadius: 20,
-        width: 380,
+        width: 350,
         height: 50,
         textAlign: 'center',
         alignItems: 'center', 
@@ -77,5 +85,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 15,
         
+    },
+
+    button: {
+        height: 50,
+        width: 320,
+        borderRadius: 20,
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#6EF46B',
+       
     },
 })
