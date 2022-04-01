@@ -1,9 +1,7 @@
 import React from "react";
-//import  { Navigation }  from  'react-minimal-side-navigation' ; 
-//import  'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css' ;
-import {View, Image, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function Tarefas({navigation}){
+export default function Lista({navigation}){
     return(
         
         <View style ={styles.container}>
@@ -35,7 +33,7 @@ export default function Tarefas({navigation}){
             <TouchableOpacity style={styles.button}
                 onPress = {() => navigation.navigate('Detalhes')}
             >
-                <Text>Adicionar tarefa  +</Text>
+                <Text>Adicionar tarefa  +  (Tela Detalhes)</Text>
             </TouchableOpacity>
 
         </View>
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#8425E3',
         alignItems: 'center',
-        //justifyContent: 'center',
+        justifyContent: 'center',
         
     },
     

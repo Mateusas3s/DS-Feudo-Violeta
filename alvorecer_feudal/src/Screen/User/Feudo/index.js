@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 
     textContainer: {
         height: 120,
-        width: 320,
+        width: 330,
         borderRadius: 20,
         marginTop: 20,
         backgroundColor: '#fff',
