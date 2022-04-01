@@ -1,11 +1,11 @@
 import React from "react";
 
 import Interface from '../../User/Interface/index'
-import userFeudo from '../../User/Feudo/index';
-import userTarefas from '../../User/Tarefas/index';
-import userPerfil from '../../User/Perfil/index';
+import Feudo from '../../User/Feudo/index';
+import Perfil from '../../User/Perfil/index';
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MenuTarefas from "../MenuTarefas";
 
 const Tab = createBottomTabNavigator()
 
@@ -14,9 +14,9 @@ export default function UserMenu(){
     return(
         <Tab.Navigator>
             <Tab.Screen name = "Interface" component={Interface} options={{headerShown: false}}/>
-            <Tab.Screen name = "Feudo" component={userFeudo} options={{headerShown: false}}/>
-            <Tab.Screen name = "Tarefas" component={userTarefas} options={{headerShown: false}}/>
-            <Tab.Screen name = "Perfil" component={userPerfil} options={{headerShown: false}}/>
+            <Tab.Screen name = "Feudo" component={Feudo} options={{headerShown: false}}/>
+            <Tab.Screen name = "Tarefas" component={MenuTarefas} options={{headerShown: false}}/>
+            <Tab.Screen name = "Perfil" component={Perfil} options={{headerShown: false}}/>
         </Tab.Navigator>
     );
 }
