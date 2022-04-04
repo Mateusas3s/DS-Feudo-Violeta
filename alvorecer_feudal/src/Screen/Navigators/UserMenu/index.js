@@ -5,7 +5,7 @@ import Feudo from '../../User/Feudo/index';
 import Perfil from '../../User/Perfil/index';
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MenuTarefas from "../MenuTarefas";
+import MenuTarefas from "./MenuTarefas";
 
 const Tab = createBottomTabNavigator()
 

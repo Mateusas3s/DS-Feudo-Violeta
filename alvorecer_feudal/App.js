@@ -32,7 +32,7 @@ export default function App(){
         <Stack.Screen name = 'Menu' component={UserMenu} options={{headerLeft: ()=> null}}/>
                                                                   {/*Remover o botão de voltar do cabeçalho*/}
                                                                   {/*Não esta pronto pq ainda não há um botão pra deslogar*/}
-        <Stack.Screen name = 'MenuAdmin' component={AdminMenu} options={{/*headerLeft: ()=> null*/}}/>        
+        <Stack.Screen name = 'MenuAdmin' component={AdminMenu} options={{headerLeft: ()=> null}}/>        
 
       </Stack.Navigator>
     </NavigationContainer>
