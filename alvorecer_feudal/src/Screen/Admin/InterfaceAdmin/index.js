@@ -4,19 +4,24 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 export default function InterfaceAdmin({navigation}){
     return(
     <View style = {styles.container}>
-        <TouchableOpacity style={styles.button}>
+        
+        <TouchableOpacity style={styles.button}
+            onPress={() => navigation.navigate("Construtores")}>
             <Text>Construtores do Reino</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+            onPress={() => navigation.navigate("Feudos")}>
             <Text>Gerenciar Feudos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+            onPress={() => navigation.navigate("Tarefas")}>
             <Text>Gerenciar Tarefas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+            onPress={() => navigation.navigate("Ranking")}>
             <Text>Ranking Feudal</Text>
         </TouchableOpacity>
 

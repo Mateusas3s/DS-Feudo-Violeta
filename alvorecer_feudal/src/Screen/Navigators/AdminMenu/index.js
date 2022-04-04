@@ -2,7 +2,7 @@ import React from "react";
 
 import InterfaceAdmin from '../../Admin/InterfaceAdmin/index'
 import GerenciarFeudos from '../../Admin/GerenciarFeudos/index'
-import ConstrutoresReino from '../../Admin/ConstrutoresReino/index'
+import ConstrutoresReino from './ConstrutoresReino/index'
 import GerenciarTarefas from '../../Admin/GerenciarTarefas/index'
 import AdministrarRanking from '../../Admin/AdministrarRanking/index'
 
