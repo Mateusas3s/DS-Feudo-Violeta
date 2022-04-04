@@ -1,10 +1,25 @@
 import React from "react";
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function InterfaceAdmin(){
+export default function InterfaceAdmin({navigation}){
     return(
     <View style = {styles.container}>
-        <Text style = {styles.tittle}>Menu de admin</Text>
+        <TouchableOpacity style={styles.button}>
+            <Text>Construtores do Reino</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+            <Text>Gerenciar Feudos</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+            <Text>Gerenciar Tarefas</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+            <Text>Ranking Feudal</Text>
+        </TouchableOpacity>
+
     </View>
     );
 }
@@ -23,5 +38,17 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: '#fff',
         marginBottom: 0,
+    },
+
+    button: {
+        height: 100,
+        width: 320,
+        borderRadius: 20,
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#6EF46B',
+        elevation: 15
+
     },
 })
