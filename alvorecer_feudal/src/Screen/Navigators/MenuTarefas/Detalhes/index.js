@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function Detalhes({navigation}){
+export default function Detalhes({navigation, route}){
 
-    const [tarefa, setTarefa] = useState('Concluir o Front-End')
-    const [descricao, setDescricao] = useState(
-        'Com o uso de ferramentas do React Navigation, Finalize o Front-End, principalmente o UI')
-    const [estado, setEstado] = useState('Em Progresso')
-    const [est, setEst] = useState(false)
+    const [tarefa, setTarefa] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [estado, setEstado] = useState(route.params?.estado)
+    const [est, setEst] = useState(route.params?.est)
 
     function alterarEstado(){
         if (est) {
@@ -26,15 +25,11 @@ export default function Detalhes({navigation}){
             <Text style = {styles.tittle}>Detalhes</Text>
             
             <View style={styles.smallTextContainer}>                 
-                <Text style={styles.text}>{tarefa}</Text>
+                <Text style={styles.text}>{route.params?.tarefa}</Text>
             </View>
 
             <View style={styles.textContainer}>
-                <Text style={styles.descricao}>{descricao}</Text>
-            </View>
-
-            <View style={styles.textContainer}>
-                <Text style={styles.descricao}>Não sei pra que serve esse container, mas senti que precisava dele</Text>
+                <Text style={styles.descricao}>{route.params?.descricao}</Text>
             </View>
 
             <View style={styles.containerAlfa}>

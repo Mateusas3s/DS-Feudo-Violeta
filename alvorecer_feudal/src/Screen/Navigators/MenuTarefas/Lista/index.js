@@ -7,34 +7,87 @@ export default function Lista({navigation}){
         <View style ={styles.container}>
             <Text style = {styles.tittle}>Tarefas do Feudo</Text>
             
-            <View style={styles.scrollview}>
-                <ScrollView>
-                    <Text style={styles.tarefas}>Tarefa 1</Text>
-                    <Text style={styles.tarefas}>Tarefa 2</Text>
-                    <Text style={styles.tarefas}>Tarefa 3</Text>
-                    <Text style={styles.tarefas}>Tarefa 4</Text>
-                    <Text style={styles.tarefas}>Tarefa 5</Text>
-                    <Text style={styles.tarefas}>Tarefa 6</Text>
-                    <Text style={styles.tarefas}>Tarefa 7</Text>
-                    <Text style={styles.tarefas}>Tarefa 8</Text>
-                    <Text style={styles.tarefas}>Tarefa 9</Text>
-                    <Text style={styles.tarefas}>Tarefa 10</Text>
-                    <Text style={styles.tarefas}>Tarefa 11</Text>
-                    <Text style={styles.tarefas}>Tarefa 12</Text>
-                    <Text style={styles.tarefas}>Tarefa 13</Text>
-                    <Text style={styles.tarefas}>Tarefa 14</Text>
-                    
-                </ScrollView> 
-
+                <ScrollView contentContainerStyle = {styles.scrollContainer}>
                 
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Criar Telas de Admin',
+                            descricao: 'Com as ferramentas aprendidas até então, crie todas as telas de administrador',
+                            estado: 'Em Progresso',
+                            est: false
+                        })}
+                    >
+                        <Text>Tarefa 1</Text>
+                    </TouchableOpacity>
 
-            </View>
-            
-            <TouchableOpacity style={styles.button}
-                onPress = {() => navigation.navigate('Detalhes')}
-            >
-                <Text>Adicionar tarefa  +  (Tela Detalhes)</Text>
-            </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Melhorar o UI',
+                            descricao: 'O UI de user e de admin precisam de ajustes',
+                            estado: 'Em Progresso',
+                            est: false
+                        })}
+                    >
+                        <Text>Tarefa 2</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Preparar o Back-End',
+                            descricao: 'A autenticação ja esta funcionando, é preciso trabalhar o banco de dados',
+                            estado: 'Em Progresso',
+                            est: false
+                        })}
+                    >
+                        <Text>Tarefa 3</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Estudar React Native',
+                            descricao: 'Precisamos aprender React Native para começar a trabalhar no app',
+                            estado: 'Concluido',
+                            est: true
+                        })}
+                    >
+                        <Text>Tarefa 4</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Estudar React Native',
+                            descricao: 'Precisamos aprender React Native para começar a trabalhar no app',
+                            estado: 'Concluido',
+                            est: true
+                        })}
+                    >
+                        <Text>Tarefa 5</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={styles.tarefas}
+                        onPress = {() => navigation.navigate('Detalhes',{
+                            tarefa: 'Aprender sobre Scrum',
+                            descricao: 'Aprendendo o Basico sobre as metodologias agéis para trablhar no projeto',
+                            estado: 'Concluido',
+                            est: true
+                        })}
+                    >
+                        <Text>Tarefa 6</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button}
+                        onPress = {() => navigation.navigate('Detalhes')}
+                    >
+                        <Text>Adicionar tarefa  +  (Tela Detalhes)</Text>
+                    </TouchableOpacity>
+
+                </ScrollView> 
 
         </View>
         
@@ -59,19 +112,16 @@ const styles = StyleSheet.create({
     tittle: {
         fontSize: 40,
         color: '#fff',
-        marginBottom: 0,
+        margin: 15,
     },
 
-    scrollview: {
-        height: 350,
-        width: 370,
-        borderRadius: 10,
+    scrollContainer: {
+        width: 400,
         marginTop: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#8425E3',
         alignItems: 'center',
-        elevation: 15,
-        textAlign: 'center',
-        alignItems: 'center', 
+        justifyContent: 'center',
+        
     },
 
     tarefas: {
@@ -79,22 +129,21 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         width: 350,
         height: 50,
-        textAlign: 'center',
         alignItems: 'center', 
-        marginTop: 10,
         justifyContent: 'center',
-        paddingTop: 15,
-        
+        margin: 5,
+        elevation: 15,        
     },
 
     button: {
         height: 50,
         width: 320,
         borderRadius: 20,
-        marginTop: 20,
+        marginTop: 60,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#6EF46B',
+        elevation: 15,
        
     },
 })
