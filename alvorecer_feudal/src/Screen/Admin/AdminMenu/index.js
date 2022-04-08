@@ -1,10 +1,10 @@
 import React from "react";
 
-import InterfaceAdmin from '../../Admin/InterfaceAdmin/index'
-import GerenciarFeudos from '../../Admin/GerenciarFeudos/index'
+import InterfaceAdmin from './InterfaceAdmin/index'
+import GerenciarFeudos from './GerenciarFeudos/index'
 import ConstrutoresReino from './ConstrutoresReino/index'
-import GerenciarTarefas from '../../Admin/GerenciarTarefas/index'
-import AdministrarRanking from '../../Admin/AdministrarRanking/index'
+import GerenciarTarefas from './GerenciarTarefas/index'
+import AdministrarRanking from './AdministrarRanking/index'
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 

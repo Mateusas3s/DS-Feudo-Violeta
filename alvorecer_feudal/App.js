@@ -6,10 +6,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/Screen/Login';
 
 //admin
-import AdminMenu from './src/Screen/Navigators/AdminMenu/index';
+import AdminMenu from './src/Screen/Admin/AdminMenu/index';
 
 //usuarios comuns
-import UserMenu from './src/Screen/Navigators/UserMenu/index';
+import UserMenu from './src/Screen/User/UserMenu/index';
 
 const Stack = createStackNavigator()
 
