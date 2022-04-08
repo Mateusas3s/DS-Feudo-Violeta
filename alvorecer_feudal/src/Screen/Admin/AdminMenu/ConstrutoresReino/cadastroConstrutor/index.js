@@ -1,7 +1,12 @@
 import React from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView,  KeyboardAvoidingView, Platform} from 'react-native';
 
-export default function GerenciarConstrutores(){
+export default function CadastroConstrutor({navigation}){
+
+    const nome = 'Fulano'
+    const matricula = '123456789'
+    const email = 'fulano@aluno.unb.br'
+    const senha = '*********'
 
     return(
 
@@ -40,7 +45,9 @@ export default function GerenciarConstrutores(){
                     <Text>Confirmar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonCancel}>
+                <TouchableOpacity style={styles.buttonCancel}
+                    onPress = {() => navigation.navigate('ListaConstrutor')}
+                >
                     <Text>Cancelar</Text>
                 </TouchableOpacity>
 

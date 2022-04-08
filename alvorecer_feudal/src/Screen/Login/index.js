@@ -99,7 +99,7 @@ export default function Login({navigation}){
           }
     
         <TouchableOpacity //Botão para logar
-          onPress = {LoginFirebase} > 
+          onPress = {LoginFirebase}> 
 
           <View style = {styles.button}>
             <Text style = {styles.text}>Entrar</Text> 
