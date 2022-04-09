@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function Lista({navigation}){
+export default function ListaTarefas({navigation}){
     return(
         
         <View style ={styles.container}>
@@ -82,9 +82,9 @@ export default function Lista({navigation}){
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}
-                        onPress = {() => navigation.navigate('Detalhes')}
+                        onPress = {() => navigation.navigate('CriarTarefa')}
                     >
-                        <Text>Adicionar tarefa  +  (Tela Detalhes)</Text>
+                        <Text>Adicionar tarefa  +</Text>
                     </TouchableOpacity>
 
                 </ScrollView> 

@@ -1,11 +1,11 @@
 import React from "react";
 
-import Interface from '../../User/Interface/index'
-import Feudo from '../../User/Feudo/index';
-import Perfil from '../../User/Perfil/index';
+import Interface from './Interface/index'
+import Feudo from './Feudo/index';
+import Perfil from './Perfil/index';
+import MenuTarefas from './MenuTarefas/index';
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MenuTarefas from "./MenuTarefas";
 
 const Tab = createBottomTabNavigator()
 

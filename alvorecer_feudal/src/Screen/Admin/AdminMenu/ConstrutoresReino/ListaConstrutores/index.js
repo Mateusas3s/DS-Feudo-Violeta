@@ -1,7 +1,12 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
+<<<<<<< HEAD:alvorecer_feudal/src/Screen/Admin/AdminMenu/GerenciarConstrutores/ConstrutoresReino/index.js
 export default function ConstrutoresReino({navigation}){
+=======
+export default function GerenciarConstrutores({navigation}){
+>>>>>>> 53671d0df71988b79043fc164a4487973f0ef21c:alvorecer_feudal/src/Screen/Admin/AdminMenu/ConstrutoresReino/ListaConstrutores/index.js
 
     return(
         <View style={styles.container}>
@@ -9,22 +14,33 @@ export default function ConstrutoresReino({navigation}){
 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
+                >
                     <Text>Fulano</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
+                >
                     <Text>Cliclano</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
+                >
                     <Text>Beltrano</Text>
                 </TouchableOpacity>
 
             </ScrollView>
 
             <TouchableOpacity style={styles.button2}
+<<<<<<< HEAD:alvorecer_feudal/src/Screen/Admin/AdminMenu/GerenciarConstrutores/ConstrutoresReino/index.js
                 onPress={() => navigation.navigate('cadastroConstrutor')}>
+=======
+                onPress = {() => navigation.navigate('CadastroConstrutor')}
+            >
+>>>>>>> 53671d0df71988b79043fc164a4487973f0ef21c:alvorecer_feudal/src/Screen/Admin/AdminMenu/ConstrutoresReino/ListaConstrutores/index.js
                 <Text>Adiconar Contrutor    +</Text>
             </TouchableOpacity>
 

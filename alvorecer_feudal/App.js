@@ -6,10 +6,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/Screen/Login';
 
 //admin
-import AdminMenu from './src/Screen/Navigators/AdminMenu/index';
+import AdminMenu from './src/Screen/Admin/AdminMenu/index';
 
 //usuarios comuns
-import UserMenu from './src/Screen/Navigators/UserMenu/index';
+import UserMenu from './src/Screen/User/UserMenu/index';
 
 const Stack = createStackNavigator()
 
@@ -30,8 +30,6 @@ export default function App(){
 
         <Stack.Screen name = 'Login' component={Login} options={{headerShown: false}}/>
         <Stack.Screen name = 'Menu' component={UserMenu} options={{headerLeft: ()=> null}}/>
-                                                                  {/*Remover o botão de voltar do cabeçalho*/}
-                                                                  {/*Não esta pronto pq ainda não há um botão pra deslogar*/}
         <Stack.Screen name = 'MenuAdmin' component={AdminMenu} options={{headerLeft: ()=> null}}/>        
 
       </Stack.Navigator>

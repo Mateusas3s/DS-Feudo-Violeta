@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function Detalhes({navigation, route}){
+export default function DetalhesTarefa({navigation, route}){
 
     const [tarefa, setTarefa] = useState('')
     const [descricao, setDescricao] = useState('')

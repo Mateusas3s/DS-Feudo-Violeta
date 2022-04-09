@@ -1,34 +1,46 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function GerenciarFeudos(){
+export default function GerenciarFeudos({navigation}){
     return(
         <View style = {styles.container}>
             <Text style = {styles.tittle}>Gerenciar Feudos</Text>
 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('Detalhes')}
+                >
                     <Text>Feudo Azul escuro</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('Detalhes')}
+                >
                     <Text>Feudo branco</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('Detalhes')}
+                >
                     <Text>Feudo vermelho</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('Detalhes')}
+                >
                     <Text>Feudo laranja</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                    onPress = {() => navigation.navigate('Detalhes')}
+                >
                     <Text>Feudo roxo</Text>
                 </TouchableOpacity>
             </ScrollView>
 
-            <TouchableOpacity style={styles.button2}>
+            <TouchableOpacity style={styles.button2}
+                onPress = {() => navigation.navigate('Criar')}
+            >
                 <Text>Criar Feudo   +</Text>
             </TouchableOpacity>
 
