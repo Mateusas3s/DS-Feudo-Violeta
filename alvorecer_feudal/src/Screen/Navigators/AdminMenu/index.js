@@ -2,7 +2,7 @@ import React from "react";
 
 import InterfaceAdmin from '../../Admin/InterfaceAdmin/index'
 import GerenciarFeudos from '../../Admin/GerenciarFeudos/index'
-import ConstrutoresReino from './ConstrutoresReino/index'
+import ConstrutoresReino from './GerenciarConstrutores/ConstrutoresReino/index'
 import GerenciarTarefas from '../../Admin/GerenciarTarefas/index'
 import AdministrarRanking from '../../Admin/AdministrarRanking/index'
 
@@ -10,7 +10,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator()
 
-export default function UserMenu(){
+export default function AdminMenu(){
 
     return(
         <Tab.Navigator>

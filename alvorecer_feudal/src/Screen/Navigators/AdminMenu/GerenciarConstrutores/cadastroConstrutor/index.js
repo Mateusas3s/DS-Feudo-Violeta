@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView,  KeyboardAvoidingView, Platform} from 'react-native';
 
-export default function GerenciarConstrutores(){
+export default function cadastroConstrutor({navigation}){
+
+    const [nome, setNome] = useState('fulano');
+    const [email, setEmail] = useState('fulano@gmail.com');
+    const [matricula, setMatricula] = useState('202020200');
+    const [senha, setSenha] = useState('');
+
 
     return(
 
@@ -36,11 +42,13 @@ export default function GerenciarConstrutores(){
 
                 ></TextInput>
 
-                <TouchableOpacity style={styles.buttonConfirm}>
+                <TouchableOpacity style={styles.buttonConfirm}
+                    onPress={() => navigation.navigate('ConstrutoresReino')}>
                     <Text>Confirmar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonCancel}>
+                <TouchableOpacity style={styles.buttonCancel}
+                    onPress={() => navigation.navigate('ConstrutoresReino')}>
                     <Text>Cancelar</Text>
                 </TouchableOpacity>
 

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
 
     textcontainer: {
-        height: 150,
+        height: 130,
         width: 320,
         borderRadius: 20,
         marginTop: 20,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
 
     containernumerico: {
-        height: 150,
+        height: 120,
         width: 150,
         borderRadius: 20,
         marginHorizontal: 10,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        height: 120,
+        height: 90,
         width: 320,
         borderRadius: 20,
         marginTop: 20,

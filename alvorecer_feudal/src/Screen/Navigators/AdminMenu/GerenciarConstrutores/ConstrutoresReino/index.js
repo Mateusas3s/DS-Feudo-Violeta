@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function GerenciarConstrutores(){
+export default function ConstrutoresReino({navigation}){
 
     return(
         <View style={styles.container}>
@@ -23,7 +23,8 @@ export default function GerenciarConstrutores(){
 
             </ScrollView>
 
-            <TouchableOpacity style={styles.button2}>
+            <TouchableOpacity style={styles.button2}
+                onPress={() => navigation.navigate('cadastroConstrutor')}>
                 <Text>Adiconar Contrutor    +</Text>
             </TouchableOpacity>
 
