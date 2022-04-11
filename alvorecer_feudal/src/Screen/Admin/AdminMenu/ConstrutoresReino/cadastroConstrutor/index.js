@@ -1,22 +1,13 @@
 import React, {useState} from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView,  KeyboardAvoidingView, Platform} from 'react-native';
 
-<<<<<<< HEAD:alvorecer_feudal/src/Screen/Admin/AdminMenu/GerenciarConstrutores/cadastroConstrutor/index.js
-export default function cadastroConstrutor({navigation}){
+export default function CadastroConstrutor({navigation}){
 
     const [nome, setNome] = useState('fulano');
     const [email, setEmail] = useState('fulano@gmail.com');
     const [matricula, setMatricula] = useState('202020200');
     const [senha, setSenha] = useState('');
 
-=======
-export default function CadastroConstrutor({navigation}){
-
-    const nome = 'Fulano'
-    const matricula = '123456789'
-    const email = 'fulano@aluno.unb.br'
-    const senha = '*********'
->>>>>>> 53671d0df71988b79043fc164a4487973f0ef21c:alvorecer_feudal/src/Screen/Admin/AdminMenu/ConstrutoresReino/cadastroConstrutor/index.js
 
     return(
 
@@ -57,12 +48,8 @@ export default function CadastroConstrutor({navigation}){
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonCancel}
-<<<<<<< HEAD:alvorecer_feudal/src/Screen/Admin/AdminMenu/GerenciarConstrutores/cadastroConstrutor/index.js
-                    onPress={() => navigation.navigate('ConstrutoresReino')}>
-=======
                     onPress = {() => navigation.navigate('ListaConstrutor')}
                 >
->>>>>>> 53671d0df71988b79043fc164a4487973f0ef21c:alvorecer_feudal/src/Screen/Admin/AdminMenu/ConstrutoresReino/cadastroConstrutor/index.js
                     <Text>Cancelar</Text>
                 </TouchableOpacity>
 
