@@ -1,15 +1,54 @@
 import React, {useState} from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView,  KeyboardAvoidingView, Platform} from 'react-native';
+import app from '../../../../../../config/firebase.js';
+import {doc, setDoc, collection, addDoc, Firestore, getFirestore} from 'firebase/firestore';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 export default function CadastroConstrutor({navigation}){
 
-    const [nome, setNome] = useState('fulano');
-    const [email, setEmail] = useState('fulano@gmail.com');
-    const [matricula, setMatricula] = useState('202020200');
+    const db = getFirestore(app);
+    const usersMatriculas=[];
+
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [matricula, setMatricula] = useState('');
     const [senha, setSenha] = useState('');
 
+    const cadastrarUsers = () => {
 
-    return(
+        //Criar nova conta de usuario
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, senha)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+        });
+
+
+        criarBD();
+        usersMatriculas.push(matricula);
+        navigation.navigate('ListaConstrutor');
+        
+    }
+
+    const criarBD= ()=>{
+        //criando documento do usuario
+        setDoc(doc(db, "Users", matricula), {
+            name: nome,
+            email: email,
+            matricula: matricula
+        });
+    }
+
+
+    return( 
 
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -20,30 +59,39 @@ export default function CadastroConstrutor({navigation}){
 
                 <TextInput 
                     style = {styles.textContainer}
-                    placeholder = {nome}
+                    onChangeText= {setNome}
+                    value={nome}
+                    placeholder = 'nome'
                 
                 ></TextInput>
 
                 <TextInput 
                     style = {styles.textContainer}
-                    placeholder = {matricula}
+                    onChangeText={setMatricula}
+                    value={matricula}
+                    placeholder = 'matricula'
 
                 ></TextInput>
 
                 <TextInput 
                     style = {styles.textContainer}
-                    placeholder = {email}
+                    onChangeText={setEmail}
+                    value={email}
+                    placeholder = 'email'
 
                 ></TextInput>
 
                 <TextInput 
                     style = {styles.textContainer}
-                    placeholder = {senha}
+                    onChangeText={setSenha}
+                    value={senha}
+                    placeholder = 'senha'
 
                 ></TextInput>
 
                 <TouchableOpacity style={styles.buttonConfirm}
-                    onPress={() => navigation.navigate('ConstrutoresReino')}>
+                    onPress={cadastrarUsers}
+                    >
                     <Text>Confirmar</Text>
                 </TouchableOpacity>
 

@@ -1,8 +1,23 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import app from '../../../../../../config/firebase.js';
+import {doc, setDoc, getDocs, collection, addDoc, Firestore, getFirestore} from 'firebase/firestore';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 export default function GerenciarConstrutores({navigation}){
+    const db = getFirestore(app);
+
+    const getDocs = () => {
+
+        //para trazer todos os documentos de uma coleção
+        const querySnapshot = getDocs(collection(db, "Users"));
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        });
+    }
 
     return(
         <View style={styles.container}>
@@ -26,6 +41,11 @@ export default function GerenciarConstrutores({navigation}){
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}
                 >
                     <Text>Beltrano</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button}
+                onPress = {getDocs}>
+                    <Text>ver documentos</Text>
                 </TouchableOpacity>
 
             </ScrollView>
