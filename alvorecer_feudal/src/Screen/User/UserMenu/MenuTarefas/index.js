@@ -13,8 +13,8 @@ export default function MenuTarefas(){
 
   return (
       <Stack.Navigator>
-        <Stack.Screen name='Lista' component={ListaTarefas} options={{headerShown: false}}/>
-        <Stack.Screen name='Detalhes' component={DetalhesTarefa} options={{headerShown: false}}/>
+        <Stack.Screen name='ListaTarefas' component={ListaTarefas} options={{headerShown: false}}/>
+        <Stack.Screen name='DetalhesTarefa' component={DetalhesTarefa} options={{headerShown: false}}/>
         <Stack.Screen name='CriarTarefa' component={CriarTarefa} options={{headerShown: false}}/>    
       </Stack.Navigator>
   );

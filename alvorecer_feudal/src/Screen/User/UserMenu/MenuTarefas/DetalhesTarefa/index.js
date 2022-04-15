@@ -3,8 +3,8 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function DetalhesTarefa({navigation, route}){
 
-    const [tarefa, setTarefa] = useState('')
-    const [descricao, setDescricao] = useState('')
+    const [tarefa, setTarefa] = useState(route.params?.tarefa)
+    const [descricao, setDescricao] = useState(route.params?.descricao)
     const [estado, setEstado] = useState(route.params?.estado)
     const [est, setEst] = useState(route.params?.est)
 
@@ -25,11 +25,11 @@ export default function DetalhesTarefa({navigation, route}){
             <Text style = {styles.tittle}>Detalhes</Text>
             
             <View style={styles.smallTextContainer}>                 
-                <Text style={styles.text}>{route.params?.tarefa}</Text>
+                <Text style={styles.text}>{tarefa}</Text>
             </View>
 
             <View style={styles.textContainer}>
-                <Text style={styles.descricao}>{route.params?.descricao}</Text>
+                <Text style={styles.descricao}>{descricao}</Text>
             </View>
 
             <View style={styles.containerAlfa}>
@@ -46,17 +46,12 @@ export default function DetalhesTarefa({navigation, route}){
             
             <TouchableOpacity 
                 style={styles.button}
-                onPress={() => navigation.navigate('Lista')}
+                onPress={() => navigation.navigate('ListaTarefas')}
             >
                 <Text>Voltar</Text>
             </TouchableOpacity>
 
         </View>
-        
-
-
-
-
 
     );
 }

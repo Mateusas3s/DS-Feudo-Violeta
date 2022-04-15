@@ -17,37 +17,40 @@ export default function Perfil(){
 
     return(
     <SafeAreaView style = {styles.container}>
+        <Text style = {styles.tittle}>Perfil</Text>
+
         <ScrollView contentContainerStyle = {styles.scrollContainer}>
 
             <TextInput 
                 style = {styles.textContainer}
                 placeholder = {nome}
             
-            ></TextInput>
+            />
 
             <TextInput 
                 style = {styles.textContainer}
                 placeholder = {matricula}
 
-            ></TextInput>
+            />
 
             <TextInput 
                 style = {styles.textContainer}
                 placeholder = {email}
 
-            ></TextInput>
+            />
 
             <TextInput 
                 style = {styles.textContainer}
                 placeholder = {senha}
 
-            ></TextInput>
+            />
 
             <TextInput 
                 style = {styles.longTextContainer}
+                multiline = {true}
                 placeholder = {about}
 
-            ></TextInput>
+            />
 
             <TouchableOpacity
                 style = {styles.button}
@@ -80,10 +83,11 @@ const styles = StyleSheet.create({
     },
 
     textContainer: {
-        height: 60,
-        width: 320,
+        height: 50,
+        width: 340,
         borderRadius: 20,
         marginTop: 20,
+        fontSize: 20,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -94,10 +98,11 @@ const styles = StyleSheet.create({
     },
 
     longTextContainer: {
-        height: 100,
-        width: 320,
+        height: 150,
+        width: 340,
         borderRadius: 20,
         marginTop: 30,
+        fontSize: 18,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -111,9 +116,14 @@ const styles = StyleSheet.create({
         color: '#484848',
     },
 
+    tittle: {
+        fontSize: 40,
+        color: '#fff',
+    },
+
     button: {
-        height: 120,
-        width: 320,
+        height: 60,
+        width: 340,
         borderRadius: 20,
         marginTop: 20,
         alignItems: 'center',
