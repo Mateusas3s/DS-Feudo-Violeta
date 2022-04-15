@@ -36,7 +36,7 @@ export default function CadastroConstrutor({navigation}){
         usersMatriculas.push(matricula);
         navigation.navigate('ListaConstrutor');
         
-    
+    }
 
     const criarBD= ()=>{
         //criando documento do usuario
