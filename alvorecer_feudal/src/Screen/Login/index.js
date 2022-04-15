@@ -90,7 +90,7 @@ export default function Login({navigation}){
               color='red'
               style={styles.messageError}
             >
-            <Text style={{color:'red'}}>Invalid email or password!</Text>
+            <Text style={{color:'red'}}> Invalid email or password!</Text>
             </MaterialCommunityIcons>
           </View>
           
