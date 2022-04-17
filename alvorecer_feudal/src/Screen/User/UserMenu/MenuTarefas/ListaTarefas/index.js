@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
+import app from '../../../../../../config/firebase.js';
+import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function ListaTarefas({navigation}){
 
-    const tarefas = [
-        {id: 'xablau', name: 'Tarefa 1'},
-        {id: 'xasdih', name: 'Tarefa 2'},
-        {id: 'aiuhde', name: 'Tarefa 3'},
-        {id: 'kirnos', name: 'Tarefa 4'},
-        {id: 'oigjds', name: 'Tarefa 5'},
-    ]
+    const db = getFirestore(app);
+
+    const lista = [];
+    const unsub = onSnapshot(doc(db, "Feudos", "AzulEscuro", "TarefasFeudo"), (doc) =>{
+        lista.push(doc.data());
+    });
+    
 
     function User({nameTarefa}) {
         return(
@@ -39,7 +41,7 @@ export default function ListaTarefas({navigation}){
             <Text style = {styles.tittle}>Tarefas do Feudo</Text>
 
             <FlatList
-                data = {tarefas}
+                data = {lista}
                 renderItem = {({item}) => <User nameTarefa={item.name}/>}
                 keyExtractor = {item => item.id}
             />

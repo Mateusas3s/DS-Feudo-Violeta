@@ -2,15 +2,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
 
 
 export default function GerenciarConstrutores({navigation}){
    
     const db = getFirestore(app);
 
-    const [lista, setLista] = useState([]);
+    /*const [lista, setLista] = useState([]);
 
     useEffect(()=>{
        db.collection("Users").onSnapshot(snapshot=>{
@@ -19,7 +18,16 @@ export default function GerenciarConstrutores({navigation}){
             }));
         })
         
-    },[])
+    },[])*/
+
+    const q = query(collection(db, "Users"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const users = [];
+    querySnapshot.forEach((doc) => {
+        users.push(doc.data());
+    });
+    
+    });
     
 
     return(
@@ -31,13 +39,13 @@ export default function GerenciarConstrutores({navigation}){
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
                 {
-                    lista.map((val)=>{
+                    users.map((val)=>{
                         return(
-                            <View>
-                                <TouchableOpacity style={styles.button}>
-                                    <Text>{val.info.matricula}</Text>
-                                </TouchableOpacity>
-                            </View>
+                            
+                            <TouchableOpacity style={styles.button}>
+                                <Text>{val}</Text>
+                            </TouchableOpacity>
+                            
                         )
                     })
                 }
