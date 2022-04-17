@@ -17,12 +17,12 @@ export default function InterfaceAdmin({navigation}){
             <View style={styles.containeralfa}>
 
                 <View style={styles.containernumerico}>
-                    <Text style={styles.text}>Quantidade de Cavaleiros</Text>
+                    <Text style={styles.text}>Qntd. de Cavaleiros</Text>
                     <Text style={styles.text}>{quantCavaleiros}</Text>
                 </View>
 
                 <View style={styles.containernumerico}>
-                    <Text style={styles.text}>Quantidade de Feudos</Text>
+                    <Text style={styles.text}>Qntd de Feudos</Text>
                     <Text style={styles.text}>{quantFeudos}</Text>
                 </View>
 
@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     },
 
     textcontainer: {
-        height: 130,
-        width: 320,
+        height: 150,
+        width: 340,
         borderRadius: 20,
         marginTop: 20,
         backgroundColor: '#fff',
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     },
 
     containernumerico: {
-        height: 120,
-        width: 150,
+        height: 150,
+        width: 160,
         borderRadius: 20,
         marginHorizontal: 10,
         backgroundColor: '#fff',
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        height: 90,
-        width: 320,
+        height: 120,
+        width: 340,
         borderRadius: 20,
         marginTop: 20,
         alignItems: 'center',
@@ -98,10 +98,8 @@ const styles = StyleSheet.create({
 
     text: {
         margin: 10,
-        fontSize: 20,
+        fontSize: 30,
         color: '#484848',
-        alignItems: 'center', 
-        justifyContent: 'center',
 
     },
 

@@ -7,7 +7,7 @@ export default function Perfil(){
     const [nome, setNome] = useState('Fulano')
     const [matricula, setMatricula] = useState('123456789')
     const [email, setEmail] = useState('123456789@aluno.unb.br')
-    const [senha, setSenha] = useState('102030')
+    const [senha, setSenha] = useState('senha')
     const [about, setAbout] = useState('Eu sei usar React Native e estou aprendendo Firebase :D')
 
     const setAtributos = () => {
@@ -42,6 +42,7 @@ export default function Perfil(){
             <TextInput 
                 style = {styles.textContainer}
                 placeholder = {senha}
+                secureTextEntry = {true}
 
             />
 

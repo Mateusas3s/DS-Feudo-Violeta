@@ -1,29 +1,46 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useState, useEffect} from "react";
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, getDocs, collection, addDoc, Firestore, getFirestore} from 'firebase/firestore';
+import {doc, setDoc, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 export default function GerenciarConstrutores({navigation}){
+   
     const db = getFirestore(app);
 
-    const getDocs = () => {
+    const [lista, setLista] = useState([]);
 
-        //para trazer todos os documentos de uma coleção
-        const querySnapshot = getDocs(collection(db, "Users"));
-        querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        });
-    }
+    useEffect(()=>{
+       db.collection("Users").onSnapshot(snapshot=>{
+            setLista(snapshot.docs.map(function(doc){
+                return {info:doc.data()}
+            }));
+        })
+        
+    },[])
+    
 
     return(
+        
         <View style={styles.container}>
-            <Text style={styles.tittle}>Gerenciar Contrutores</Text>
 
+            <Text style={styles.tittle}>Gerenciar Contrutores</Text>
+            
             <ScrollView contentContainerStyle={styles.scrollContainer}>
+
+                {
+                    lista.map((val)=>{
+                        return(
+                            <View>
+                                <TouchableOpacity style={styles.button}>
+                                    <Text>{val.info.matricula}</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    })
+                }
 
                 <TouchableOpacity style={styles.button}
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}
@@ -31,22 +48,7 @@ export default function GerenciarConstrutores({navigation}){
                     <Text>Fulano</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}
-                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
-                >
-                    <Text>Cliclano</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button}
-                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
-                >
-                    <Text>Beltrano</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button}
-                onPress = {getDocs}>
-                    <Text>ver documentos</Text>
-                </TouchableOpacity>
+                
 
             </ScrollView>
 
