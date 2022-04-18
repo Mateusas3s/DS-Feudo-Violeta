@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import app from '../../../../../../config/firebase.js';
 import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
@@ -9,15 +9,25 @@ export default function ListaTarefas({navigation}){
 
     const db = getFirestore(app);
 
-    const lista = [];
-    const unsub = onSnapshot(doc(db, "Feudos", "AzulEscuro", "TarefasFeudo"), (doc) =>{
-        lista.push(doc.data());
-    });
+    var lista=[];
+
+    useEffect(()=>{
+        const q = query(collection(db, "Feudos", "AzulEscuro", "TarefasFeudo"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            lista=[];
+            querySnapshot.forEach((doc) => {  
+            lista.push(doc.data().name);
+        });
+        console.log("tarefas: ", lista.join(", "));
+        });
+    },[])
+   
     
 
     function User({nameTarefa}) {
         return(
             <View style={styles.buttonsContainer}>
+
                 <TouchableOpacity 
                     style={styles.tarefasButton}
                     onPress={() => navigation.navigate('DetalhesTarefa')}

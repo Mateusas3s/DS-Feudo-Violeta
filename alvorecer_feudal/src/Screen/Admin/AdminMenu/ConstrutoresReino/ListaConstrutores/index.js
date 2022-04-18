@@ -9,38 +9,49 @@ export default function GerenciarConstrutores({navigation}){
    
     const db = getFirestore(app);
 
-    const [lista, setLista] = useState([]);
-    /*useEffect(()=>{
+    /*const [lista, setLista] = useState([]);
+    useEffect(()=>{
        db.collection("Users").onSnapshot(snapshot=>{
             setLista(snapshot.docs.map(function(doc){
                 return {info:doc.data()}
             }));
         })
         
-    },[])*/
+    },[])
+    */
+   
+   var lista = [];
     
+   useEffect(()=>{
+       const q = query(collection(db, "Users"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            lista=[];
+            querySnapshot.forEach((doc) => {
+            lista.push(doc.data().matricula);
+        });
+        console.log("Users: ", lista.join(", "));
+        });
+   },[])
+   
+    const listaok = lista.map((texto)=>
+        <View>
+        <TouchableOpacity style={styles.button}>
+            <Text>{texto}</Text>
+        </TouchableOpacity>
+        </View>
+    )
+
 
     return(
             
         <View style={styles.container}>
             
             <Text style={styles.tittle}>Gerenciar Contrutores</Text>
-            
+                
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
-                {
-                    lista.map((item)=>{
-                        return(
-                            
-                            <TouchableOpacity style={styles.button}>
-                                <Text>{item.info.matricula}</Text>
-                            </TouchableOpacity>
-                            
-                        )
-                    })
-                }
-
-
+                
+                
                 <TouchableOpacity style={styles.button}
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}
                 >
