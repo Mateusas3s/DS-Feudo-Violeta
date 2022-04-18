@@ -9,7 +9,7 @@ import {View,
         Platform} from 'react-native';
 
 import {MaterialCommunityIcons} from '@expo/vector-icons';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import app from '../../../config/firebase'
 
 export default function Login({navigation}){

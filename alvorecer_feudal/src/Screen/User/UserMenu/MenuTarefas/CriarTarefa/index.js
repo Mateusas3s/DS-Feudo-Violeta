@@ -1,12 +1,32 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, TextInput} from 'react-native';
+import app from '../../../../../../config/firebase.js';
+import {doc, setDoc, collection, addDoc, Firestore, getFirestore} from 'firebase/firestore';
 
 export default function CriarTarefa({navigation}){
+    const db = getFirestore(app);
 
     const[nomeTarefa, setNomeTarefa] = useState("");
     const[descricao, setDescricao] = useState("");
     const[estado, setEstado] = useState("Em Progresso");
     const[est, setEst] = useState(false);
+
+    const cadastrarTarefas = () => {
+
+        criarBD();
+        
+        navigation.navigate('ListaTarefas');
+        
+    }
+
+    const criarBD= ()=>{
+        //criando documento do usuario
+        setDoc(doc(db, "Feudos", "AzulEscuro", "TarefasFeudo", nomeTarefa), {
+            name: nomeTarefa,
+            descricao: descricao,
+            estado: est
+        });
+    }
 
     return(
     <SafeAreaView style = {styles.container}>
@@ -32,7 +52,7 @@ export default function CriarTarefa({navigation}){
 
             <TouchableOpacity
                 style = {styles.button}
-                onPress = {() => navigation.navigate('ListaTarefas')}
+                onPress = {cadastrarTarefas}
             >
                 <Text style = {styles.text}>Confirmar</Text>
             </TouchableOpacity>

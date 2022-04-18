@@ -1,32 +1,64 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useState, useEffect} from "react";
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
+import app from '../../../../../../config/firebase.js';
+import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
+
 
 export default function GerenciarConstrutores({navigation}){
+   
+    const db = getFirestore(app);
+
+    /*const [lista, setLista] = useState([]);
+
+    useEffect(()=>{
+       db.collection("Users").onSnapshot(snapshot=>{
+            setLista(snapshot.docs.map(function(doc){
+                return {info:doc.data()}
+            }));
+        })
+        
+    },[])*/
+
+    const q = query(collection(db, "Users"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const users = [];
+    querySnapshot.forEach((doc) => {
+        users.push(doc.data());
+    });
+    
+    });
+    
 
     return(
+        
         <View style={styles.container}>
-            <Text style={styles.tittle}>Gerenciar Contrutores</Text>
 
+            <Text style={styles.tittle}>Gerenciar Contrutores</Text>
+            
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
-                <TouchableOpacity style={styles.button}
-                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
-                >
-                    <Text style={styles.text}>Fulano</Text>
-                </TouchableOpacity>
+                {
+                    users.map((val)=>{
+                        return(
+                            
+                            <TouchableOpacity style={styles.button}>
+                                <Text>{val}</Text>
+                            </TouchableOpacity>
+                            
+                        )
+                    })
+                }
+
 
                 <TouchableOpacity style={styles.button}
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}
                 >
-                    <Text style={styles.text}>Cliclano</Text>
+                  
+                    <Text>Fulano</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}
-                    onPress = {() => navigation.navigate('DetalhesConstrutor')}
-                >
-                    <Text style={styles.text}>Beltrano</Text>
-                </TouchableOpacity>
+                
 
             </ScrollView>
 

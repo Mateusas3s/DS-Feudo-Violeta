@@ -2,7 +2,7 @@ import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 import ListaConstrutores from './ListaConstrutores/index';
-import CadastroConstrutor from './CadastroConstrutor/index';
+import CadastroConstrutor from './cadastroConstrutor/index';
 import DetalhesConstrutor from './DetalhesConstrutor/index';
 
 import { createStackNavigator } from '@react-navigation/stack';

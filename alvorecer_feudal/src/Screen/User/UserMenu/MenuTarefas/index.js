@@ -10,6 +10,7 @@ const Stack = createStackNavigator()
 
 export default function MenuTarefas(){ 
 
+
   return (
       <Stack.Navigator>
         <Stack.Screen name='ListaTarefas' component={ListaTarefas} options={{headerShown: false}}/>
