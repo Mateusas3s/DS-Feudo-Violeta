@@ -7,19 +7,8 @@ import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot
 
 export default function GerenciarConstrutores({navigation}){
    
-    const db = getFirestore(app);
-
-    /*const [lista, setLista] = useState([]);
-    useEffect(()=>{
-       db.collection("Users").onSnapshot(snapshot=>{
-            setLista(snapshot.docs.map(function(doc){
-                return {info:doc.data()}
-            }));
-        })
-        
-    },[])
-    */
-   
+    const db = getFirestore(app)
+  
    var lista = [];
     
    useEffect(()=>{
@@ -50,7 +39,17 @@ export default function GerenciarConstrutores({navigation}){
                 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
-                
+                {
+                    lista.map((val)=>{
+                        return(
+                            <View>
+                                <TouchableOpacity style={styles.button}>
+                                    <Text>{val.info.matricula}</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    })
+                }
                 
                 <TouchableOpacity style={styles.button}
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}

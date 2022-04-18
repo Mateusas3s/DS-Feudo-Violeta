@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 export default function DescricaoFeudo({navigation}){
 
@@ -9,7 +9,8 @@ export default function DescricaoFeudo({navigation}){
     const [descProjeto, setDescProjeto] = useState('Um app para indicar aos integrantes da disciplina as patacas, rank, feudo, projeto, tarefas, e integrantes do feudo, além de proporcionar auxilio ao Monarca')
     
     return(
-    <View style = {styles.container}>
+        <View style={styles.container}>
+    <ScrollView >
 
         <View style = {styles.textContainer}>
             <Text style = {styles.text}>Feudo:</Text>
@@ -37,6 +38,7 @@ export default function DescricaoFeudo({navigation}){
         >
             <Text style={styles.text}>Membros</Text>
         </TouchableOpacity>
+    </ScrollView>
     </View>
     );
 }
