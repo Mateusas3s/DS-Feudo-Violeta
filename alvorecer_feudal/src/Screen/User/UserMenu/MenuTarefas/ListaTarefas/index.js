@@ -14,7 +14,7 @@ export default function ListaTarefas({navigation}){
     useEffect(()=>{
         const q = query(collection(db, "Feudos", "AzulEscuro", "TarefasFeudo"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
-            lista=[];
+            lista=[];  
             querySnapshot.forEach((doc) => {  
             lista.push(doc.data().name);
         });
@@ -22,8 +22,6 @@ export default function ListaTarefas({navigation}){
         });
     },[])
    
-    
-
     function User({nameTarefa}) {
         return(
             <View style={styles.buttonsContainer}>
