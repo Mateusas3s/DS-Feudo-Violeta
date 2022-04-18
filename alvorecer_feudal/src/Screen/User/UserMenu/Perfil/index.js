@@ -4,15 +4,22 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Perfil(){
 
-    const [nome, setNome] = useState('Fulano')
-    const [matricula, setMatricula] = useState('123456789')
-    const [email, setEmail] = useState('123456789@aluno.unb.br')
-    const [senha, setSenha] = useState('senha')
-    const [about, setAbout] = useState('Eu sei usar React Native e estou aprendendo Firebase :D')
+    const [nome, setNome] = useState('')
+    const [matricula, setMatricula] = useState('')
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+    const [about, setAbout] = useState('')
+
+    let n = 'Nome'
+    let m = 'Matricula'
+    let e = 'E-mail'
+    let a = 'Descrição Profissional'
 
     const setAtributos = () => {
-
-
+        n = nome
+        m = matricula
+        e = email
+        a = about
     }
 
     return(
@@ -23,39 +30,47 @@ export default function Perfil(){
 
             <TextInput 
                 style = {styles.textContainer}
-                placeholder = {nome}
-            
+                placeholder = {n}
+                onChangeText = {setNome}
+                value = {nome}
             />
 
             <TextInput 
                 style = {styles.textContainer}
-                placeholder = {matricula}
+                placeholder = {m}
+                onChangeText = {setMatricula}
+                value = {matricula}
 
             />
 
             <TextInput 
                 style = {styles.textContainer}
-                placeholder = {email}
+                placeholder = {e}
+                onChangeText = {setEmail}
+                value = {email}
 
             />
 
             <TextInput 
                 style = {styles.textContainer}
-                placeholder = {senha}
+                placeholder = 'Senha'
                 secureTextEntry = {true}
-
+                onChangeText = {setSenha}
+                value = {senha}
             />
 
             <TextInput 
                 style = {styles.longTextContainer}
                 multiline = {true}
-                placeholder = {about}
+                placeholder = {a}
+                onChangeText = {setAbout}
+                value = {about}
 
             />
 
             <TouchableOpacity
                 style = {styles.button}
-                
+                onPress = {() => setAtributos()}
             >
                 <Text style = {styles.text}>Confirmar</Text>
             </TouchableOpacity>
@@ -90,6 +105,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         fontSize: 20,
         backgroundColor: '#fff',
+        color: '#484848',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 15,
@@ -105,6 +121,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         fontSize: 18,
         backgroundColor: '#fff',
+        color: '#484848',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',

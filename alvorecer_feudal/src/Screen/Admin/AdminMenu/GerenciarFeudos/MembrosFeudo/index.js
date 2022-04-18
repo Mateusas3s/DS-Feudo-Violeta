@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView} from "react-native";
+import React, {useState} from "react";
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function Membros({navigation}){
-    
+export default function MembrosFeudo({navigation}){
+
     const [nomeConstrutor, setNomeConstrutor] = useState(["WILDEMBERG SALES DA SILVA JUNIOR", "JOAO PEDRO RODRIGUES MORBECK", "", "", "", ""])
     const [nomeDuque, setNomeDuque] = useState("Mateus Augusto Sousa e Silva")
 
@@ -43,15 +43,16 @@ export default function Membros({navigation}){
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('DescricaoFeudo')}
+                onPress={() => navigation.navigate('DetalhesFeudos')}
             >
                 <Text style = {styles.text}>Voltar</Text>
             </TouchableOpacity>
         </View>
-)}
+    );
+}
 
 const styles = StyleSheet.create({
-    
+
     container: {
         flex: 1,
         backgroundColor: '#8425E3',
@@ -90,6 +91,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ffd335',
+        backgroundColor: '#6EF46B',
     },
 })
