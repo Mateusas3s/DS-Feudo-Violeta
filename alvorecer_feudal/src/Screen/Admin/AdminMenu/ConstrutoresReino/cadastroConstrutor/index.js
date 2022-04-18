@@ -43,7 +43,8 @@ export default function CadastroConstrutor({navigation}){
         setDoc(doc(db, "Users", matricula), {
             name: nome,
             email: email,
-            matricula: matricula
+            matricula: matricula,
+            patacas: 0
         });
     }
 

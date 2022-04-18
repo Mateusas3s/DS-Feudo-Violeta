@@ -2,16 +2,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, snapshotEqual} from 'firebase/firestore';
+import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot} from 'firebase/firestore';
 
 
 export default function GerenciarConstrutores({navigation}){
    
     const db = getFirestore(app);
 
-    /*const [lista, setLista] = useState([]);
-
-    useEffect(()=>{
+    const [lista, setLista] = useState([]);
+    /*useEffect(()=>{
        db.collection("Users").onSnapshot(snapshot=>{
             setLista(snapshot.docs.map(function(doc){
                 return {info:doc.data()}
@@ -19,31 +18,22 @@ export default function GerenciarConstrutores({navigation}){
         })
         
     },[])*/
-
-    const q = query(collection(db, "Users"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const users = [];
-    querySnapshot.forEach((doc) => {
-        users.push(doc.data());
-    });
-    
-    });
     
 
     return(
-        
+            
         <View style={styles.container}>
-
+            
             <Text style={styles.tittle}>Gerenciar Contrutores</Text>
             
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
                 {
-                    users.map((val)=>{
+                    lista.map((item)=>{
                         return(
                             
                             <TouchableOpacity style={styles.button}>
-                                <Text>{val}</Text>
+                                <Text>{item.info.matricula}</Text>
                             </TouchableOpacity>
                             
                         )
