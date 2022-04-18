@@ -40,9 +40,11 @@ export default function GerenciarConstrutores({navigation}){
                     })
                 }
 
+
                 <TouchableOpacity style={styles.button}
                     onPress = {() => navigation.navigate('DetalhesConstrutor')}
                 >
+                  
                     <Text>Fulano</Text>
                 </TouchableOpacity>
 
@@ -53,7 +55,7 @@ export default function GerenciarConstrutores({navigation}){
             <TouchableOpacity style={styles.button2}
                 onPress = {() => navigation.navigate('CadastroConstrutor')}
             >
-                <Text>Adiconar Contrutor    +</Text>
+                <Text style={styles.text}>Adiconar Contrutor</Text>
             </TouchableOpacity>
 
         </View>
@@ -106,5 +108,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor:'#ffd335',
+    },
+
+    text: {
+        fontSize: 20,
+        color: '#484848',
+
     },
 })

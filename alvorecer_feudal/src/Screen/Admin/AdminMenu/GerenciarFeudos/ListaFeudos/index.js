@@ -6,16 +6,25 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 export default function GerenciarFeudos({navigation}){
 
     const feudos = [
-        {id: 'auifba', feudo: 'Azul Escuro Violeta'},
-        {id: 'rphjsd', feudo: 'Branco Flor de Lótus'},
-        {id: 'irepng', feudo: 'Vermelho Rosas'},
-        {id: 'towbia', feudo: 'Rosa flor de cerejeira'},
-        {id: 'yeopwn', feudo: 'Preto terras devastadas'},
-        {id: 'nbsijf', feudo: 'Amarelo girassol'},
-        {id: 'ysoidf', feudo: 'Azul Hortências'},
-        {id: 'rgsoih', feudo: 'Verde pântano'},
-        {id: 'eoijgo', feudo: 'Roxo Lavanda'},
-        {id: 'mcispf', feudo: 'Laranja ave do paraíso'},
+        {id: 'auifba', feudo: 'Azul Escuro Violeta',},
+
+        {id: 'rphjsd', feudo: 'Branco Flor de Lótus',},
+
+        {id: 'irepng', feudo: 'Vermelho Rosas',},
+
+        {id: 'towbia', feudo: 'Rosa flor de cerejeira',},
+
+        {id: 'yeopwn', feudo: 'Preto terras devastadas',},
+
+        {id: 'nbsijf', feudo: 'Amarelo girassol',},
+
+        {id: 'ysoidf', feudo: 'Azul Hortências',},
+
+        {id: 'rgsoih', feudo: 'Verde pântano',},
+
+        {id: 'eoijgo', feudo: 'Roxo Lavanda',},
+
+        {id: 'mcispf', feudo: 'Laranja ave do paraíso'}
     ]
 
     function Feudo({nameFeudo}) {
@@ -23,6 +32,7 @@ export default function GerenciarFeudos({navigation}){
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity 
                     style={styles.tarefasButton}
+                    onPress={() => navigation.navigate('DetalhesFeudos', feudos[this])}
                 >
                     <Text style={styles.text}>{nameFeudo}</Text>
                 </TouchableOpacity>
@@ -33,7 +43,7 @@ export default function GerenciarFeudos({navigation}){
 
     return(
         <View style ={styles.container}>
-            <Text style = {styles.tittle}>Tarefas do Feudo</Text>
+            <Text style = {styles.tittle}>Feudos</Text>
 
             <FlatList
                 data = {feudos}
