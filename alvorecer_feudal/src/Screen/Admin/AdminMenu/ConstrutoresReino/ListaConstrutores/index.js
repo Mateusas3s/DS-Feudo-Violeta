@@ -22,13 +22,7 @@ export default function GerenciarConstrutores({navigation}){
         });
    },[])
    
-    const listaok = lista.map((texto)=>
-        <View>
-        <TouchableOpacity style={styles.button}>
-            <Text>{texto}</Text>
-        </TouchableOpacity>
-        </View>
-    )
+    
 
 
     return(
@@ -40,15 +34,13 @@ export default function GerenciarConstrutores({navigation}){
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
                 {
-                    lista.map((val)=>{
-                        return(
-                            <View>
-                                <TouchableOpacity style={styles.button}>
-                                    <Text>{val.info.matricula}</Text>
-                                </TouchableOpacity>
-                            </View>
-                        )
-                    })
+                   lista.map((item)=>(
+                       <View>
+                           <TouchableOpacity>
+                               <Text>{item}</Text>
+                           </TouchableOpacity>
+                       </View>
+                   ))
                 }
                 
                 <TouchableOpacity style={styles.button}
