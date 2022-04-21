@@ -2,50 +2,49 @@ import { NavigationContainer } from "@react-navigation/native";
 import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot} from 'firebase/firestore';
+import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, QuerySnapshot} from 'firebase/firestore';
 
 
 export default function GerenciarConstrutores({navigation}){
 
    const db = getFirestore(app)
- 
-     let lista = [];
-//   let lista = ['20', '45', '88', '49'];
-//   let lista = [{matricula:'20', name: 'joao'}, {matricula:'45', name: 'jose'}, {matricula:'88', name: 'jamilton'}, {matricula:'49', name: 'jorge'}];
 
-    
-   useEffect(()=>{
-       const q = query(collection(db, "Users"));
-            const unsubscribe = onSnapshot(q, (querySnapshot) => {
-                lista=[];
-                querySnapshot.forEach((doc) => {
-                lista.push(doc.data());
+    const lista = [];
+   useEffect(()=>{  
+        const q = query(collection(db, "Users"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        lista=[];
+        querySnapshot.forEach((doc) => {
+            lista.push(doc.id);
         });
         console.log("Users: ", lista.join(", "));
         });
-   },[])
-   
-    
-   function Construtor({nome}){
-       return(
-        <TouchableOpacity 
-            style={styles.button}
-        >
-            <Text style={styles.text}>{nome}</Text>
-        </TouchableOpacity>
-    )}
+   },[]);
+
+    const Item =({item})=>(
+        <View style={styles.container}>
+            <TouchableOpacity style={styles.button}>
+                <Text>{item}</Text>
+            </TouchableOpacity>
+        </View>
+    );
+    const renderItem=({item})=>(
+        <Item item={item.id}/>
+    );
 
     return(
             
         <View style={styles.container}>
             
             <Text style={styles.tittle}>Gerenciar Contrutores</Text>
-  
-                <FlatList 
-                    data = {lista}
-                    renderItem = {({item}) => <Construtor nome = {item.name}/>}
-                    keyExtractor = {item => item.matricula}
+
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
+                <FlatList
+                    data={lista}
+                    renderItem={renderItem}
                 />
+            </ScrollView>
+                
 
             <TouchableOpacity style={styles.button2}
                 onPress = {() => navigation.navigate('CadastroConstrutor')}
