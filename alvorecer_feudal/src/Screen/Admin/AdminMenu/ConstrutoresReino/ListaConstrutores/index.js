@@ -9,13 +9,13 @@ export default function GerenciarConstrutores({navigation}){
 
    const db = getFirestore(app)
 
-    const lista = [];
+    var lista = [];
    useEffect(()=>{  
         const q = query(collection(db, "Users"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
         lista=[];
         querySnapshot.forEach((doc) => {
-            lista.push(doc.id);
+            lista.push(doc.data().matricula);
         });
         console.log("Users: ", lista.join(", "));
         });
@@ -42,6 +42,7 @@ export default function GerenciarConstrutores({navigation}){
                 <FlatList
                     data={lista}
                     renderItem={renderItem}
+                    keyExtractor={(item)=>item.matricula}
                 />
             </ScrollView>
                 
