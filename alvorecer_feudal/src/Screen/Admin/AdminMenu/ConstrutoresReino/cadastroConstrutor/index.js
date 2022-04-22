@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView,  KeyboardAvoidingView, Platform} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, collection, addDoc, Firestore, getFirestore} from 'firebase/firestore';
+import {doc, setDoc, getFirestore} from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -14,6 +14,7 @@ export default function CadastroConstrutor({navigation}){
     const [email, setEmail] = useState('');
     const [matricula, setMatricula] = useState('');
     const [senha, setSenha] = useState('');
+    const patacas = 0;
 
     const cadastrarUsers = () => {
 
@@ -44,7 +45,7 @@ export default function CadastroConstrutor({navigation}){
             name: nome,
             email: email,
             matricula: matricula,
-            patacas: 0
+            patacas: patacas
         });
     }
 
@@ -62,7 +63,7 @@ export default function CadastroConstrutor({navigation}){
                     style = {styles.textContainer}
                     onChangeText= {setNome}
                     value={nome}
-                    placeholder = 'nome'
+                    placeholder = 'Nome'
                 
                 ></TextInput>
 
@@ -70,7 +71,7 @@ export default function CadastroConstrutor({navigation}){
                     style = {styles.textContainer}
                     onChangeText={setMatricula}
                     value={matricula}
-                    placeholder = 'matricula'
+                    placeholder = 'Matricula'
 
                 ></TextInput>
 
@@ -78,7 +79,7 @@ export default function CadastroConstrutor({navigation}){
                     style = {styles.textContainer}
                     onChangeText={setEmail}
                     value={email}
-                    placeholder = 'email'
+                    placeholder = 'Email'
 
                 ></TextInput>
 
@@ -86,7 +87,7 @@ export default function CadastroConstrutor({navigation}){
                     style = {styles.textContainer}
                     onChangeText={setSenha}
                     value={senha}
-                    placeholder = 'senha'
+                    placeholder = 'Senha'
 
                 ></TextInput>
 

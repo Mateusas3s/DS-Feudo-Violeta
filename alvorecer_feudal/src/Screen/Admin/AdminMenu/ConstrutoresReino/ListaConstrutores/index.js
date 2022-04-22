@@ -2,9 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
-import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, QuerySnapshot} from 'firebase/firestore';
-import { async } from "@firebase/util";
-;
+import {query, collection, getFirestore, onSnapshot} from 'firebase/firestore';
+
 
 export default function GerenciarConstrutores({navigation}){
 
@@ -16,7 +15,7 @@ export default function GerenciarConstrutores({navigation}){
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
         lista = [];
         querySnapshot.forEach((doc) => {
-            lista.push(doc.data());
+            lista.push(doc.id);
         });
         console.log("users: ", lista.join(", "));
         });
