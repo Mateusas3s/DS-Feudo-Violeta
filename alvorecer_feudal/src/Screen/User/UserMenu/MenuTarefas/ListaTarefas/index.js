@@ -21,12 +21,15 @@ var lista=[];
 export default function ListaTarefas({navigation}){
 
    
-    function Tarefa({nameTarefa}) {
+    function Tarefa({nameTarefa, descricao}) {
         return(
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity 
                     style={styles.tarefasButton}
-                    onPress={() => navigation.navigate('DetalhesTarefa', )}
+                    onPress={() => navigation.navigate('DetalhesTarefa', 
+                        tarefa = nameTarefa,
+                        desc = descricao
+                    )}
                 >
                     <Text style={styles.text}>{nameTarefa}</Text>
                 </TouchableOpacity>
@@ -48,8 +51,8 @@ export default function ListaTarefas({navigation}){
 
             <FlatList
                 data = {lista}
-                renderItem = {({item}) => <Tarefa nameTarefa={item.name}/>}
-                keyExtractor = {item => item.data}
+                renderItem = {({item}) => <Tarefa nameTarefa={item.name} desc={item.descricao}/>}
+                keyExtractor = {item => item.descricao}
             />
 
             <View style={styles.scrollContainer}>

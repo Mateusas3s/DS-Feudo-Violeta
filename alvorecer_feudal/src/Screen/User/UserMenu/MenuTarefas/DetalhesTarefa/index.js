@@ -5,7 +5,7 @@ export default function DetalhesTarefa({navigation, route}){
 
     const [tarefa, setTarefa] = useState(route.params?.tarefa)
     const [descricao, setDescricao] = useState(route.params?.descricao)
-    const [estado, setEstado] = useState(route.params?.estado)
+    const [estado, setEstado] = useState('Em Progresso')
     const [est, setEst] = useState(route.params?.est)
 
     function alterarEstado(){
