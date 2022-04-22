@@ -4,25 +4,18 @@ import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeArea
 import app from '../../../../../../config/firebase.js';
 import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot} from 'firebase/firestore';
 
+const db = getFirestore(app);
 
-export default function GerenciarConstrutores({navigation}){
-
-   const db = getFirestore(app)
- 
-     var lista = [];
-//   let lista = ['20', '45', '88', '49'];
-//   let lista = [{matricula:'20', name: 'joao'}, {matricula:'45', name: 'jose'}, {matricula:'88', name: 'jamilton'}, {matricula:'49', name: 'jorge'}];
-
-    
-       const q = query(collection(db, "Users"));
-            const unsubscribe = onSnapshot(q, (querySnapshot) => {
-                lista=[];
-                querySnapshot.forEach((doc) => {
-                lista.push(doc.data());
-        });
-        console.log("Users: ", lista.join(", "));
-        Construtor(doc.data().matricula)
-        });
+var lista = [];
+const q = query(collection(db, "Users"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        lista=[];
+        querySnapshot.forEach((doc) => {
+        lista.push(doc.data());
+});
+console.log("Users: ", lista.join(", "));
+        
+});
    
         function Construtor({nome}){
             return(
@@ -32,6 +25,15 @@ export default function GerenciarConstrutores({navigation}){
                  <Text style={styles.text}>{nome}</Text>
              </TouchableOpacity>
          )}
+
+export default function GerenciarConstrutores({navigation}){
+
+   
+ 
+     
+//   let lista = ['20', '45', '88', '49'];
+//   let lista = [{matricula:'20', name: 'joao'}, {matricula:'45', name: 'jose'}, {matricula:'88', name: 'jamilton'}, {matricula:'49', name: 'jorge'}];
+
     return(
             
         <View style={styles.container}>
