@@ -5,11 +5,8 @@ import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function ListaTarefas({navigation}){
-
-    const db = getFirestore(app);
-
-    var lista=[];
+const db = getFirestore(app);
+var lista=[];
 
     useEffect(()=>{
         const q = query(collection(db, "Feudos", "AzulEscuro", "TarefasFeudo"));
@@ -21,9 +18,10 @@ export default function ListaTarefas({navigation}){
         console.log("tarefas: ", lista.join(", "));
         });
     },[])
-   
-    
 
+export default function ListaTarefas({navigation}){
+
+   
     function User({nameTarefa}) {
         return(
             <View style={styles.buttonsContainer}>
