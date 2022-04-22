@@ -32,15 +32,6 @@ export default function GerenciarConstrutores({navigation}){
 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 
-                <FlatList
-                    data={lista}
-                    keyExtractor={(element)=>{element.matricula}}
-                    renderItem={({item})=>{
-                        return(
-                            <Text>{item.name}</Text>
-                        )
-                    }}
-                />
 
                 
             </ScrollView>
