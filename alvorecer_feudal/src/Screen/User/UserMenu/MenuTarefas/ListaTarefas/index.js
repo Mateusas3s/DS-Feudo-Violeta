@@ -8,27 +8,25 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const db = getFirestore(app);
 var lista=[];
 
-    useEffect(()=>{
-        const q = query(collection(db, "Feudos", "AzulEscuro", "TarefasFeudo"));
+    
+    const q = query(collection(db, "Feudos", "AzulEscuro", "TarefasFeudo"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             lista=[];
             querySnapshot.forEach((doc) => {  
-            lista.push(doc.data().name);
-        });
+            lista.push(doc.data());
+    });
         console.log("tarefas: ", lista.join(", "));
-        });
-    },[])
+    });
 
 export default function ListaTarefas({navigation}){
 
    
-    function User({nameTarefa}) {
+    function Tarefa({nameTarefa}) {
         return(
             <View style={styles.buttonsContainer}>
-
                 <TouchableOpacity 
                     style={styles.tarefasButton}
-                    onPress={() => navigation.navigate('DetalhesTarefa')}
+                    onPress={() => navigation.navigate('DetalhesTarefa', )}
                 >
                     <Text style={styles.text}>{nameTarefa}</Text>
                 </TouchableOpacity>
@@ -50,8 +48,8 @@ export default function ListaTarefas({navigation}){
 
             <FlatList
                 data = {lista}
-                renderItem = {({item}) => <User nameTarefa={item.name}/>}
-                keyExtractor = {item => item.id}
+                renderItem = {({item}) => <Tarefa nameTarefa={item.name}/>}
+                keyExtractor = {item => item.data}
             />
 
             <View style={styles.scrollContainer}>

@@ -94,13 +94,13 @@ export default function CadastroConstrutor({navigation}){
                 <TouchableOpacity style={styles.buttonConfirm}
                     onPress={cadastrarUsers}
                     >
-                    <Text>Confirmar</Text>
+                    <Text style={styles.text}>Confirmar</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonCancel}
                     onPress = {() => navigation.navigate('ListaConstrutor')}
                 >
-                    <Text>Cancelar</Text>
+                    <Text style={styles.text}>Cancelar</Text>
                 </TouchableOpacity>
 
             </View>
@@ -124,6 +124,10 @@ const styles = StyleSheet.create({
         margin: 15,
     },
 
+    text: {
+        fontSize: 25,
+        color: '#484848',
+    },
 
     buttonConfirm: {
         height: 50,
@@ -149,6 +153,7 @@ const styles = StyleSheet.create({
         width: 320,
         borderRadius: 20,
         marginTop: 20,
+        fontSize: 25,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',

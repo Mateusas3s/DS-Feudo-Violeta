@@ -16,23 +16,18 @@ const q = query(collection(db, "Users"));
 console.log("Users: ", lista.join(", "));
         
 });
-   
-        function Construtor({nome}){
-            return(
-             <TouchableOpacity 
-                 style={styles.button}
-             >
-                 <Text style={styles.text}>{nome}</Text>
-             </TouchableOpacity>
-         )}
 
 export default function GerenciarConstrutores({navigation}){
-
-   
- 
-     
-//   let lista = ['20', '45', '88', '49'];
-//   let lista = [{matricula:'20', name: 'joao'}, {matricula:'45', name: 'jose'}, {matricula:'88', name: 'jamilton'}, {matricula:'49', name: 'jorge'}];
+    
+    function Construtor({nome}){
+        return(
+         <TouchableOpacity 
+             style={styles.button}
+             onPress={() => navigation.navigate('DetalhesConstrutor')}
+         >
+             <Text style={styles.text}>{nome}</Text>
+         </TouchableOpacity>
+    )}
 
     return(
             
@@ -49,7 +44,7 @@ export default function GerenciarConstrutores({navigation}){
             <TouchableOpacity style={styles.button2}
                 onPress = {() => navigation.navigate('CadastroConstrutor')}
             >
-                <Text style={styles.text}>Adiconar Contrutor</Text>
+                <Text style={styles.text}>Adicionar Contrutor</Text>
             </TouchableOpacity>
 
         </View>
@@ -98,7 +93,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 320,
         borderRadius: 20,
-        marginTop: 20,
+        marginVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor:'#ffd335',

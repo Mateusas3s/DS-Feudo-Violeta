@@ -9,23 +9,23 @@ export default function PatacasFeudos({navigation}){
             
             <View style = {styles.scrollContainer}>
                 
-                <Text style = {styles.text}>Vermelho Rosas:	5509</Text>
-                <Text style = {styles.text}>Amarelo girassol:	4468</Text>
-                <Text style = {styles.text}>Verde Pantano:	4448</Text>
-                <Text style = {styles.text}>Preto terras devastadas:	4320</Text>
-                <Text style = {styles.text}>Azul hortencias:	4275</Text>
-                <Text style = {styles.text}>Rosa flor de cerejeira:	3554</Text>
-                <Text style = {styles.text}>Branco Flor de Lótus:	3417</Text>
-                <Text style = {styles.text}>Roxo lavanda:	3299</Text>
-                <Text style = {styles.text}>Laranja ave do paraíso:	3064</Text>
-                <Text style = {styles.text}>Azul Escuro Violeta:	2343</Text>
+                <Text style = {styles.text}>Vermelho:        5509</Text>
+                <Text style = {styles.text}>Amarelo:	         4468</Text>
+                <Text style = {styles.text}>Verde:	             4448</Text>
+                <Text style = {styles.text}>Preto:              4320</Text>
+                <Text style = {styles.text}>Azul:	               4275</Text>
+                <Text style = {styles.text}>Rosa:	              3554</Text>
+                <Text style = {styles.text}>Branco:	           3417</Text>
+                <Text style = {styles.text}>Roxo:	              3299</Text>
+                <Text style = {styles.text}>Laranja:	          3064</Text>
+                <Text style = {styles.text}>Azul Escuro:  2343</Text>
 
             </View>
 
             <TouchableOpacity style = {styles.button}
                 onPress = {() => navigation.navigate('PatacasCavaleiros')}
             >
-                <Text style = {styles.text}>Mudar Cavaleiros</Text>
+                <Text style = {styles.text}>Mudar para Cavaleiros</Text>
             </TouchableOpacity>
         </View>
     );
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     },
 
     text:{
-        fontSize: 30,
+        fontSize: 25,
         color: '#484848'
     },
 

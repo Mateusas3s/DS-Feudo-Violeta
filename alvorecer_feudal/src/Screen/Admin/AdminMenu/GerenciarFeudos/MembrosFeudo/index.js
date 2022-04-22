@@ -45,7 +45,7 @@ export default function MembrosFeudo({navigation}){
                 style={styles.button}
                 onPress={() => navigation.navigate('DetalhesFeudos')}
             >
-                <Text style = {styles.text}>Voltar</Text>
+                <Text style = {styles.textButton}>Voltar</Text>
             </TouchableOpacity>
         </View>
     );
@@ -78,8 +78,13 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
 
-    text: {
+    text:{
         fontSize: 20,
+        color: '#484848',
+    },
+
+    textButton: {
+        fontSize: 25,
         color: '#484848',
 
     },

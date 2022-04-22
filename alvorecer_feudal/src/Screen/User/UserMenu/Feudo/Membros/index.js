@@ -45,7 +45,7 @@ export default function Membros({navigation}){
                 style={styles.button}
                 onPress={() => navigation.navigate('DescricaoFeudo')}
             >
-                <Text style = {styles.text}>Voltar</Text>
+                <Text style = {styles.textButton}>Voltar</Text>
             </TouchableOpacity>
         </View>
 )}
@@ -77,8 +77,13 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
 
-    text: {
+    text:{
         fontSize: 20,
+        color: '#484848',
+    },
+
+    textButton: {
+        fontSize: 25,
         color: '#484848',
 
     },
@@ -90,6 +95,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ffd335',
+        backgroundColor: '#6EF46B',
     },
 })

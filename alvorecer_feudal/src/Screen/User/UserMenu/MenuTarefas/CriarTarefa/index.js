@@ -51,10 +51,16 @@ export default function CriarTarefa({navigation}){
             />
 
             <TouchableOpacity
-                style = {styles.button}
+                style = {styles.buttonConfirm}
                 onPress = {cadastrarTarefas}
             >
                 <Text style = {styles.text}>Confirmar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.buttonCancel}
+                onPress = {() => navigation.navigate('ListaTarefas')}
+            >
+                <Text style={styles.text}>Cancelar</Text>
             </TouchableOpacity>
 
         </ScrollView>
@@ -120,13 +126,23 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
 
-    button: {
-        height: 120,
+    buttonConfirm: {
+        height: 50,
         width: 320,
         borderRadius: 20,
         marginTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#6EF46B',
+    },
+
+    buttonCancel: {
+        height: 50,
+        width: 320,
+        borderRadius: 20,
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor:'#F46B73',
     },
 })

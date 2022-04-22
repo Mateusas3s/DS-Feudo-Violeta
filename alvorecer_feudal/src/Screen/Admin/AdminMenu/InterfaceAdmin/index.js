@@ -3,9 +3,9 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function InterfaceAdmin({navigation}){
 
-    const [quantCavaleiros, setQuantCavaleiros]= useState('80');
-    const [quantFeudos, setQuantFeudos]= useState('8');
-    const [quantTarefas, setQuantTarefas]= useState('20');
+    const [quantCavaleiros, setQuantCavaleiros]= useState('67');
+    const [quantFeudos, setQuantFeudos]= useState('10');
+    const [quantTarefas, setQuantTarefas]= useState('72');
 
 
 
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        height: 120,
+        height: 100,
         width: 340,
         borderRadius: 20,
         marginTop: 20,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 
     text: {
         margin: 10,
-        fontSize: 30,
+        fontSize: 25,
         color: '#484848',
 
     },

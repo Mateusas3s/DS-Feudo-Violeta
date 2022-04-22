@@ -34,7 +34,7 @@ export default function PatacasCavaleiros({navigation}){
             <TouchableOpacity style = {styles.button}
                 onPress = {() => navigation.navigate('PatacasFeudos')}
             >
-                <Text style = {styles.text}>Mudar Feudos</Text>
+                <Text style = {styles.text}>Mudar para Feudos</Text>
             </TouchableOpacity>
         </SafeAreaView>
     );
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     },
 
     text:{
-        fontSize: 30,
+        fontSize: 25,
         color: '#484848'
     },
 
