@@ -18,7 +18,8 @@ console.log("Users: ", lista.join(", "));
 });
 
 export default function GerenciarConstrutores({navigation}){
-    
+    const [refreshing, setRefreshing]= useState(false);
+
     function Construtor({nome}){
         return(
          <TouchableOpacity 
@@ -39,6 +40,13 @@ export default function GerenciarConstrutores({navigation}){
                     data = {lista}
                     renderItem = {({item}) => <Construtor nome = {item.name}/>}
                     keyExtractor = {item => item.matricula}
+                    refreshing={refreshing}
+                    onRefresh={()=>{
+                        setRefreshing(true);
+                        setTimeout(()=>{
+                            setRefreshing(false);
+                        }, 2000);
+                    }}
                 />
 
             <TouchableOpacity style={styles.button2}
