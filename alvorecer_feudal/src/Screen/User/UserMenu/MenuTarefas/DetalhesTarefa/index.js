@@ -48,7 +48,7 @@ export default function DetalhesTarefa({navigation, route}){
                 style={styles.button}
                 onPress={() => navigation.navigate('ListaTarefas')}
             >
-                <Text>Voltar</Text>
+                <Text style = {styles.text}>Voltar</Text>
             </TouchableOpacity>
 
         </View>
@@ -144,9 +144,8 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        fontSize: 30,
+        fontSize: 25,
         color: '#484848',
-        margin: 10,
 
     },
 

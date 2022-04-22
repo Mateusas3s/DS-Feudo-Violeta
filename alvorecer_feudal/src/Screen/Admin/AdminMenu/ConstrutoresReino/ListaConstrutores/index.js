@@ -45,7 +45,7 @@ export default function GerenciarConstrutores({navigation}){
                         setRefreshing(true);
                         setTimeout(()=>{
                             setRefreshing(false);
-                        }, 2000);
+                        }, 500);
                     }}
                 />
 

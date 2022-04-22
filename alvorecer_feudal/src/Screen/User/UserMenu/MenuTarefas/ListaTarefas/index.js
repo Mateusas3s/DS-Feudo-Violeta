@@ -19,24 +19,32 @@ var lista=[];
     });
 
 export default function ListaTarefas({navigation}){
-
+    const [refreshing, setRefreshing]= useState(false);
    
-    function Tarefa({nameTarefa, descricao}) {
+    function Tarefa({nameTarefa, desc}) {
         return(
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity 
                     style={styles.tarefasButton}
-                    onPress={() => navigation.navigate('DetalhesTarefa', 
-                        tarefa = nameTarefa,
-                        desc = descricao
+                    onPress={() => navigation.navigate('DetalhesTarefa',{ 
+                        tarefa: nameTarefa,
+                        descricao: desc,
+                    }
                     )}
+                    refreshing={refreshing}
+                    onRefresh={()=>{
+                        setRefreshing(true);
+                        setTimeout(()=>{
+                            setRefreshing(false);
+                        }, 500);
+                    }}
                 >
                     <Text style={styles.text}>{nameTarefa}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity 
                     style={styles.smallButton}
-                    onPress
+                    
                 >
                     <MaterialCommunityIcons name='delete' size={24} color="#fff" />
                 </TouchableOpacity>
