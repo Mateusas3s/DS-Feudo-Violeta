@@ -3,47 +3,47 @@ import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView} from 'react-native';
 import app from '../../../../../../config/firebase.js';
 import {doc, setDoc, query, where, getDocs, collection, getFirestore, onSnapshot, QuerySnapshot} from 'firebase/firestore';
-
+import { async } from "@firebase/util";
+;
 
 export default function GerenciarConstrutores({navigation}){
 
    const db = getFirestore(app)
 
     var lista = [];
-   useEffect(()=>{  
+    useEffect(()=>{  
         const q = query(collection(db, "Users"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        lista=[];
+        lista = [];
         querySnapshot.forEach((doc) => {
-            lista.push(doc.data().matricula);
+            lista.push(doc.data());
         });
-        console.log("Users: ", lista.join(", "));
+        console.log("users: ", lista.join(", "));
         });
-   },[]);
+    },[]);
 
-    const Item =({item})=>(
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.button}>
-                <Text>{item}</Text>
-            </TouchableOpacity>
-        </View>
-    );
-    const renderItem=({item})=>(
-        <Item item={item.id}/>
-    );
+    
+    
 
     return(
             
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             
             <Text style={styles.tittle}>Gerenciar Contrutores</Text>
 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
+                
                 <FlatList
                     data={lista}
-                    renderItem={renderItem}
-                    keyExtractor={(item)=>item.matricula}
+                    keyExtractor={(element)=>{element.matricula}}
+                    renderItem={({item})=>{
+                        return(
+                            <Text>{item.name}</Text>
+                        )
+                    }}
                 />
+
+                
             </ScrollView>
                 
 
@@ -53,7 +53,7 @@ export default function GerenciarConstrutores({navigation}){
                 <Text style={styles.text}>Adiconar Contrutor</Text>
             </TouchableOpacity>
 
-        </View>
+        </SafeAreaView>
     )
 }
 
