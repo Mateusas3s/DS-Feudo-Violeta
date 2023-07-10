@@ -1,13 +1,25 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
+const adicionarPatacas = require('./functions')
+
 export default function DetalhesConstrutor({navigation}){
+
+    const userId = 3;
+
+    const [patacas, setPatacas] = React.useState(50);
 
     return(
         <View style={styles.container}>
             <Text style={styles.tittle}>Detalhes Contrutor</Text>
 
-            
+            <Text style={styles.text}>Número de patacas atual: {patacas}</Text>
+
+            <TouchableOpacity style={styles.button2}
+                onPress = {()=>{setPatacas(adicionarPatacas(patacas, 100))}}
+            >
+                <Text>Doar patacas</Text>
+            </TouchableOpacity>            
 
             <TouchableOpacity style={styles.button2}
                 onPress = {() => navigation.navigate('ListaConstrutor')}
@@ -44,6 +56,10 @@ const styles = StyleSheet.create({
         
     },
 
+    text: {
+        color:'#fff',
+        fontSize: 20
+    },
 
     button: {
         height: 60,

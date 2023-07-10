@@ -28,8 +28,6 @@ export default function App(){
         }}
       >
 
-        <Stack.Screen name = 'Login' component={Login} options={{headerShown: false}}/>
-        <Stack.Screen name = 'Menu' component={UserMenu} options={{headerLeft: ()=> null}}/>
         <Stack.Screen name = 'MenuAdmin' component={AdminMenu} options={{headerLeft: ()=> null}}/>        
 
       </Stack.Navigator>
